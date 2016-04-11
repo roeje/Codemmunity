@@ -64,6 +64,23 @@ export function show(req, res, next) {
     .catch(err => next(err));
 }
 
+
+/**
+ * Get a single user
+ */
+export function showProfile(incoming_id) {
+  var userId = incoming_id;
+
+  return User.findById(userId).exec()
+    .then(user => {
+      if (!user) {
+        return res.status(404).end();
+      }
+      res.json(user.profile);
+    })
+    .catch(err => next(err));
+}
+
 /**
  * Deletes a user
  * restriction: 'admin'

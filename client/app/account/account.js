@@ -30,6 +30,12 @@ angular.module('codemmunityAppApp')
         controller: 'SettingsController',
         controllerAs: 'vm',
         authenticate: true
+      })
+      .when('/dashboard', {
+        templateUrl: 'app/account/dashboard/dashboard.html',
+        controller: 'DashboardController',
+        controllerAs: 'vm',
+        authenticate: true
       });
   })
   .run(function($rootScope) {

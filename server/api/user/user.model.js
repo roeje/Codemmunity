@@ -11,10 +11,12 @@ var UserSchema = new Schema({
     type: String,
     lowercase: true
   },
+  contactNumber: String,
   role: {
     type: String,
     default: 'user'
   },
+  projects: [Schema.Types.Mixed],
   password: String,
   provider: String,
   salt: String

@@ -5,5 +5,8 @@ angular.module('codemmunityAppApp')
     $routeProvider
       .when('/', {
         template: '<main></main>'
+      }).when('/profile/:id', {
+        templateUrl: 'app/main/profile/profile.html',
+        controller: 'OverviewController'
       });
   });
