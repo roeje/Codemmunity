@@ -45,7 +45,7 @@ class ProfileController {
     this.user = this.Auth.getCurrentUser();
     
     console.log(this.user);
-    this.userData = this.user.projects;
+    // this.userData = this.user.projects;
     console.log(this.userData);
     // this.$http.get('/api/users/' + this.userId).then(response => {
     //   this.user = response.data;

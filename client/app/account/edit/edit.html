@@ -6,7 +6,7 @@
     </div>
     <div class="col-sm-12 dashboard-section">
       <form class="form" name="form" ng-submit="vm.modifyDashboard(form)" novalidate>
-        <button class="btn btn-sm btn-primary" type="submit">Save changes</button>
+        <button class="btn btn-default btn-primary" type="submit">Save changes</button>
         <p class="help-block"> {{ vm.message }} </p>
           <h3>Basics</h3>
           <label>Project Title</label>
@@ -30,7 +30,10 @@
       </form>
     </div>
     <div class="col-sm-6">
-      <a class="btn btn-sm btn-danger" ng-click="vm.removeProject()">Delete project</a>
+      <h4>Danger Zone</h4>
+      <p>One-way ticket to Nullville</p>
+      <a class="btn btn-default btn-danger" ng-click="vm.removeProject()">
+        <span class="glyphicon glyphicon-trash"></span>Delete project</a>
     </div>
   </div>
 </div>

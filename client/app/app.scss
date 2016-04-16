@@ -7,6 +7,11 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 
+a {
+  .glyphicon {
+    margin-right: 4px;
+  }
+}
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -30,10 +35,13 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   
   .projectPane {
     
+    .panel-heading {
+      background: #2B2E2E;
+    }
     .carousel {
       height: 500px;
       overflow-y: auto;
-      // background-color: lightgrey;
+      background-color: #A2ABA5;
       
       img {
         max-height: 100%;
@@ -52,7 +60,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
         width: 60px;
         background-image: none;
         .glyphicon {
-          background-color: lightgrey;
+          background-color: #A2ABA5;
         }
       }
       .imagePane {
