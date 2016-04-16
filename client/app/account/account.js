@@ -17,7 +17,7 @@ angular.module('codemmunityAppApp')
                           $route.current.referrer ||
                           '/';
           Auth.logout();
-          $location.path(referrer);
+          $location.path('/');
         }
       })
       .when('/signup', {
