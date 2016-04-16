@@ -24,12 +24,12 @@
           <label>Image Link</label>
           <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab2.image1" />
           <label>Image Link</label>
-          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab3.image2" />
+          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab2.image2" />
           <!--<label>Project Description</label>-->
           <!--<textarea name="desc" class="form-control" rows="4" ng-model="vm.user.desc"  />-->
       </form>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6" ng-show="vm.isEdit">
       <h4>Danger Zone</h4>
       <p>One-way ticket to Nullville</p>
       <a class="btn btn-default btn-danger" ng-click="vm.removeProject()">

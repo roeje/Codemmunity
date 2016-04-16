@@ -6,8 +6,10 @@ class MainController {
 
   constructor($http, $scope, socket) {
     this.$http = $http;
-    this.user = {};
-    this.user.name = "John Smith";
+    this.$http.get('/api/users/' + $routeParams.id).then(response => {
+      this.user = response.data;
+      console.log(this.user);
+    });
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
     });
