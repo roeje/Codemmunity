@@ -7,6 +7,7 @@ angular.module('codemmunityAppApp')
         template: '<main></main>'
       }).when('/profile/:id', {
         templateUrl: 'app/main/profile/profile.html',
-        controller: 'OverviewController'
+        controller: 'ProfileController',
+        controllerAs: 'prof'
       });
   });

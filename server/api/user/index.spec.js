@@ -7,6 +7,7 @@ var userCtrlStub = {
   destroy: 'userCtrl.destroy',
   me: 'userCtrl.me',
   changePassword: 'userCtrl.changePassword',
+  update: 'userCtrl.update',
   show: 'userCtrl.show',
   create: 'userCtrl.create'
 };
@@ -81,19 +82,30 @@ describe('User API Router:', function() {
         .withArgs('/:id/password', 'authService.isAuthenticated', 'userCtrl.changePassword')
         .should.have.been.calledOnce;
     });
-
+    
   });
+  
+  describe('PUT /api/users/:id/update', function() {
 
-  describe('GET /api/users/:id', function() {
-
-    it('should be authenticated and route to user.controller.show', function() {
-      routerStub.get
-        .withArgs('/:id', 'authService.isAuthenticated', 'userCtrl.show')
+    it('should be authenticated and route to user.controller.update', function() {
+      routerStub.put
+        .withArgs('/:id/update', 'authService.isAuthenticated', 'userCtrl.update')
         .should.have.been.calledOnce;
     });
 
   });
+  
+  
+  describe('GET /api/users/:id', function() {
 
+    it('should route to thing.controller.show', function() {
+      routerStub.get
+        .withArgs('/:id', 'userCtrl.show')
+        .should.have.been.calledOnce;
+    });
+
+  });
+  
   describe('POST /api/users', function() {
 
     it('should route to user.controller.create', function() {

@@ -20,7 +20,6 @@ class SignupController {
         name: this.user.name,
         email: this.user.email,
         password: this.user.password,
-        contactNumber: this.user.contactNumber
       })
       .then(() => {
         // Account created, redirect to home

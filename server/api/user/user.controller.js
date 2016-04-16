@@ -64,23 +64,6 @@ export function show(req, res, next) {
     .catch(err => next(err));
 }
 
-
-/**
- * Get a single user
- */
-export function showProfile(incoming_id) {
-  var userId = incoming_id;
-
-  return User.findById(userId).exec()
-    .then(user => {
-      if (!user) {
-        return res.status(404).end();
-      }
-      res.json(user.profile);
-    })
-    .catch(err => next(err));
-}
-
 /**
  * Deletes a user
  * restriction: 'admin'
@@ -105,6 +88,25 @@ export function changePassword(req, res, next) {
     .then(user => {
       if (user.authenticate(oldPass)) {
         user.password = newPass;
+        return user.save()
+          .then(() => {
+            res.status(204).end();
+          })
+          .catch(validationError(res));
+      } else {
+        return res.status(403).end();
+      }
+    });
+}
+
+export function update(req, res, next) {
+  var userId = req.user._id;
+  var projects = req.body.projects;
+  
+  return User.findById(userId).exec()
+    .then(user => {
+      if (user) {
+        user.projects = projects;
         return user.save()
           .then(() => {
             res.status(204).end();

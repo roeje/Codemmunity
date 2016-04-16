@@ -11,7 +11,6 @@ var UserSchema = new Schema({
     type: String,
     lowercase: true
   },
-  contactNumber: String,
   role: {
     type: String,
     default: 'user'
@@ -32,7 +31,8 @@ UserSchema
   .get(function() {
     return {
       'name': this.name,
-      'role': this.role
+      'role': this.role,
+      'projects' : this.projects
     };
   });
 

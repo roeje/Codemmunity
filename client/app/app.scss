@@ -14,6 +14,59 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
+.dashboard-section {
+  margin-bottom: 16px;
+}
+
+// .container {
+//   width: 100%;
+  
+// }
+
+.profile {
+  // .panel-heading {
+  //   height: 38px;
+  // }
+  
+  .projectPane {
+    
+    .carousel {
+      height: 500px;
+      overflow-y: auto;
+      // background-color: lightgrey;
+      
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+      
+      .carousel-inner {
+        // padding-right: 25px;
+      }
+      
+      .item {
+        
+      }
+      
+      .carousel-control {
+        width: 60px;
+        background-image: none;
+        .glyphicon {
+          background-color: lightgrey;
+        }
+      }
+      .imagePane {
+         max-height: 100%;
+         position: relative;
+      }
+      
+      .thumbnail {
+        max-height: 100%;
+      }
+    }
+  }
+}
+
 // Component styles are injected through grunt
 /* inject:scss */
 @import 'admin/admin';

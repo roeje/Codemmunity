@@ -68,7 +68,8 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
           return safeCb(callback)(err);
         }).$promise;
     },
-
+    
+    
     /**
      * Change password
      *
@@ -87,7 +88,16 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
         return safeCb(callback)(err);
       }).$promise;
     },
-
+    
+    updateProfile(changeProjects, callback) {
+      return User.update({ id: currentUser._id }, {
+        projects: changeProjects
+      }, function() {
+        return safeCb(callback)(null);
+      }, function(err) {
+        return safeCb(callback)(err);
+      }).$promise;
+    },
     /**
      * Gets all available info on a user
      *   (synchronous|asynchronous)
@@ -99,7 +109,6 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
       if (arguments.length === 0) {
         return currentUser;
       }
-
       var value = (currentUser.hasOwnProperty('$promise')) ?
         currentUser.$promise : currentUser;
       return $q.when(value)

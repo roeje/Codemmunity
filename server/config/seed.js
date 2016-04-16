@@ -39,23 +39,23 @@ Thing.find({}).remove()
     });
   });
 
-User.find({}).remove()
-  .then(() => {
-    User.create({
-      provider: 'local',
-      name: 'Test User',
-      email: 'test@example.com',
-      contactNumber: '6163315000',
-      password: 'test'
-    }, {
-      provider: 'local',
-      role: 'admin',
-      name: 'Admin',
-      email: 'admin@example.com',
-      contactNumber: '6163315000',
-      password: 'admin'
-    })
-    .then(() => {
-      console.log('finished populating users');
-    });
-  });
+// User.find({}).remove()
+//   .then(() => {
+//     User.create({
+//       provider: 'local',
+//       name: 'Test User',
+//       email: 'test@example.com',
+//       contactNumber: '6163315000',
+//       password: 'test'
+//     }, {
+//       provider: 'local',
+//       role: 'admin',
+//       name: 'Admin',
+//       email: 'admin@example.com',
+//       contactNumber: '6163315000',
+//       password: 'admin'
+//     })
+//     .then(() => {
+//       console.log('finished populating users');
+//     });
+//   });

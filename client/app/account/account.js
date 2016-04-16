@@ -36,6 +36,18 @@ angular.module('codemmunityAppApp')
         controller: 'DashboardController',
         controllerAs: 'vm',
         authenticate: true
+      })
+      .when('/dashboard/edit/:id', {
+        templateUrl: 'app/account/edit/edit.html',
+        controller: 'EditController',
+        controllerAs: 'vm',
+        authenticate: true
+      })
+      .when('/dashboard/edit', {
+        templateUrl: 'app/account/edit/edit.html',
+        controller: 'EditController',
+        controllerAs: 'vm',
+        authenticate: true
       });
   })
   .run(function($rootScope) {
