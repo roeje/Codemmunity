@@ -1,7 +1,7 @@
 #banner {
   border-bottom: none;
   margin-top: -20px;
-}
+}s
 
 #banner h1 {
   font-size: 60px;
@@ -22,37 +22,3 @@
   margin-left: 15px;
 }
 
-.carousel {
-      height: 500px;
-      overflow-y: auto;
-      background-color: #A2ABA5;
-      
-      img {
-        max-height: 100%;
-        max-width: 100%;
-      }
-      
-      .carousel-inner {
-        // padding-right: 25px;
-      }
-      
-      .item {
-        
-      }
-      
-      .carousel-control {
-        width: 60px;
-        background-image: none;
-        .glyphicon {
-          background-color: #A2ABA5;
-        }
-      }
-      .imagePane {
-         max-height: 100%;
-         position: relative;
-      }
-      
-      .thumbnail {
-        max-height: 100%;
-      }
-  }

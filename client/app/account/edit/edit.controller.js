@@ -40,7 +40,7 @@ class EditController {
       }
       this.Auth.updateProfile(this.user.projects)
         .then(() => {
-          this.message = 'Updated user successfully.';
+          this.message = 'Updated project successfully.';
         })
         .catch(() => {
           this.errors.other = 'Incorrect password';

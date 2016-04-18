@@ -28,12 +28,18 @@ a {
   margin-bottom: 16px;
 }
 
+.jumbotron {
+  color: #F5F5F5;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #313F54;
+}
+
 // .container {
 //   width: 100%;
   
 // }
 
-.profile {
+.profile, .exampleCar{
   // .panel-heading {
   //   height: 38px;
   // }
@@ -41,20 +47,34 @@ a {
   .projectPane {
     
     .panel-heading {
+      color: white;
       background: #2B2E2E;
+    }
+    
+    .panel-body {
+      background-color: lightgrey;
+      border-color: none;
+      
     }
     .carousel {
       height: 500px;
       overflow-y: auto;
-      background-color: #A2ABA5;
+      // background-color: #A2ABA5;
+      background-color: lightgrey;
+      
+      .carousel-indicators {
+        color: #2B2E2E;
+      }
       
       img {
-        max-height: 100%;
+        max-height: 300px;
         max-width: 100%;
       }
       
       .carousel-inner {
-        // padding-right: 25px;
+        padding-right: 50px;
+        padding-left: 50px;
+       
       }
       
       .item {
@@ -65,7 +85,9 @@ a {
         width: 60px;
         background-image: none;
         .glyphicon {
-          background-color: #A2ABA5;
+          color: #2B2E2E;
+          // background-color: #A2ABA5;
+          background-color: none;
         }
       }
       .imagePane {
@@ -75,6 +97,15 @@ a {
       
       .thumbnail {
         max-height: 100%;
+        color: #F5F5F5;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+        background: #313F54;
+        
+        .caption {
+          color: #F5F5F5;
+        }
+        
+        
       }
     }
   }

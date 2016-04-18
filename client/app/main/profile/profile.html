@@ -6,16 +6,16 @@
         <div>
           <h1>{{ prof.user.name }}'s Profile</h1>
         </div>
-        <div>
-          <p>{{ prof.user.name }}</p>
-        </div>
+        <!--<div>-->
+        <!--  <p>{{ prof.user.name }}</p>-->
+        <!--</div>-->
       </div>
     </div>
     
    
     <div class="projectList">
       
-      <div class="projectPane panel panel-primary" ng-repeat="project in prof.user.projects">
+      <div class="projectPane panel panel-default" ng-repeat="project in prof.user.projects">
         <div class="panel-heading">
           <h3 class="panel-title projectHeader">{{ project.tab1.title }}</h3>
         </div>
@@ -26,86 +26,112 @@
             <ol class="carousel-indicators">
               <li data-target="#carousel-example-generic{{$index}}" data-slide-to="0" class="active"></li>
               <li data-target="#carousel-example-generic{{$index}}" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic{{$index}}" data-slide-to="3"></li>
+              <li data-target="#carousel-example-generic{{$index}}" data-slide-to="2"></li>
             </ol>
           
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               
               <!--Tab 1-->
-              <div class="item active">
+              <div class="item active mainTab" ng-show="project.tab1">
                 <div class="col-lg-12">
-                  <div class="col-lg-12">
-                    <h2>{{project.tab1.title}}</h2>
+                  <div class="col-lg-12" ng-show="project.tab1.title">
+                    <h2 class="page-header">{{project.tab1.title}}</h2>
                   </div> 
                   
-                  <div class="col-lg-12">
+                  <div class="col-lg-12" ng-show="project.tab1.repoUrl">
                     <h3><a href="{{project.tab1.repoUrl}}" target="_blank"> {{project.tab1.repoUrl}} </a></h3>
                   </div>
                     
-                  <div class="col-lg-12">
+                  <div class="col-lg-12" ng-show="project.tab1.language">
                     <h3>Language: {{project.tab1.language}}</h3>
                   </div>
+                  
+                  <div class="col-lg-12" ng-show="project.tab1.description">
+                    <h3>Project Description: {{project.tab1.description}}</h3>
+                  </div>
+                  
                 </div>
               </div>
               
               <!--Tab 2-->
-              <div class="item">
+              <div class="item row" ng-show="project.tab2">
                 
                 <div class="col-md-12 imagePane">
-                  <div class="col-sm-6 col-md-4">
+                  <div class="col-md-4" ng-show="project.tab2.image1" ng-class="{'col-md-6': !project.tab2.image2 || !project.tab2.image3, 'col-md-offset-3': !project.tab2.image2 && !project.tab2.image3}">
                     <div class="thumbnail">
                       <img class="img-rounded" src="{{project.tab2.image1}}" alt="...">
                       <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>...</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        <h3>{{ project.tab2.image1Title }}</h3>
+                        <p>{{ project.tab2.image1Description }}</p>
+                        <p><a href="{{ project.tab2.image1 }}" target="_blank" class="btn btn-primary" role="button">Full Image</a>
                       </div>
                     </div>
                   </div>
                   
-                  <div class="col-sm-6 col-md-4 imagePane">
+                  <div class="col-md-4" ng-show="project.tab2.image2" ng-class="{'col-md-6': !project.tab2.image1 || !project.tab2.image3, 'col-md-offset-3': !project.tab2.image1 && !project.tab2.image3}">
                     <div class="thumbnail">
-                      <img src="{{project.tab2.image1}}" alt="...">
+                      <img class="img-rounded" src="{{ project.tab2.image2 }}" alt="...">
                       <div class="caption">
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        <h3>{{ project.tab2.image2Title }}</h3>
+                        <p>{{ project.tab2.image2Description }}</p>
+                        <p><a href="{{ project.tab2.image2 }}" target="_blank" class="btn btn-primary" role="button">Full Image</a>
                       </div>
                     </div>
                   </div>
                   
-                  <div class="col-sm-6 col-md-4 imagePane">
+                  <div class="col-md-4" ng-show="project.tab2.image3" ng-class="{'col-md-6': !project.tab2.image2 || !project.tab2.image1, 'col-md-offset-3': !project.tab2.image2 && !project.tab2.image1}">
                     <div class="thumbnail">
-                      <img src="{{project.tab2.image1}}" alt="...">
+                      <img class="img-rounded" src="{{ project.tab2.image3 }}" alt="...">
                       <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>...</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                        <h3>{{ project.tab2.image3Title }}</h3>
+                        <p>{{ project.tab2.image3Description }}</p>
+                        <p><a href="{{ project.tab2.image3 }}" target="_blank" class="btn btn-primary" role="button">Full Image</a>
                       </div>
                     </div>
                   </div>
                   
                 </div>
                 
-                <!--<div class="col-lg-6">-->
-                <!--  <img class="img-responsive img-thumbnail" src="{{project.tab2.image1}}"></img>-->
-                <!--</div> -->
               </div>
               
               <!--Tab 3-->
-              <div class="item">
-                <div class="col-lg-6">
-                  <img class="img-responsive img-thumbnail" src="{{project.tab3.image2}}"></img>
-                </div> 
+              <div class="item" ng-show="project.tab3" >
+                <div class="col-md-12 imagePane">
+                  <div class="col-md-6" ng-show="project.tab3.image1" ng-class="{'col-md-offset-3': !project.tab3.image2}">
+                    <div class="thumbnail">
+                      <img class="img-rounded" src="{{project.tab3.image1}}" alt="...">
+                      <div class="caption">
+                        <h3>{{ project.tab3.image1Title }}</h3>
+                        <p>{{ project.tab3.image1Description }}</p>
+                        <p><a href="{{ project.tab3.image1 }}" target="_blank" class="btn btn-primary" role="button">Full Image</a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-6" ng-show="project.tab3.image2" ng-class="{'col-md-offset-3': !project.tab3.image1}">
+                    <div class="thumbnail">
+                      <img class="img-rounded" src="{{ project.tab3.image2 }}" alt="...">
+                      <div class="caption">
+                        <h3>{{ project.tab3.image2Title }}</h3>
+                        <p>{{ project.tab3.image2Description }}</p>
+                        <p><a href="{{ project.tab3.image2 }}" target="_blank" class="btn btn-primary" role="button">Full Image</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               
             </div>
           
+          <!--href="#carousel-example-generic{{$index}}"-->
+          
             <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic{{$index}}" role="button" data-slide="prev">
+            <a class="left carousel-control" data-target="#carousel-example-generic{{$index}}" role="button" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-            <a class="right carousel-control" href="#carousel-example-generic{{$index}}" role="button" data-slide="next">
+            <a class="right carousel-control" data-target="#carousel-example-generic{{$index}}" role="button" data-slide="next">
               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
@@ -113,15 +139,9 @@
           </div>
           
         </div>  
-        
-        
-        
-        
 
       </div>
-      
     </div>
-   
   </div>
 </div>
 

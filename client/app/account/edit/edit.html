@@ -1,32 +1,75 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 jumbotron">
       <h1 ng-show="vm.isEdit">Edit {{ vm.currentProject.tab1.title }}</h1>
-      <h1 ng-show="vm.isNew">Add New Project</h1>
+      <h1 ng-show="vm.isNew">Add A New Project</h1>
+      <h3>Fill in information about your project! The more you add the better it will look!</h3>
     </div>
     <div class="col-sm-12 dashboard-section">
       <form class="form" name="form" ng-submit="vm.modifyDashboard(form)" novalidate>
         <button class="btn btn-default btn-primary" type="submit">Save changes</button>
         <p class="help-block"> {{ vm.message }} </p>
           <h3>Basics</h3>
-          <label>Project Title</label>
+          <label>Project Title *</label>
           <input type="text" name="name" class="form-control" ng-model="vm.currentProject.tab1.title" required/>
-          <!--<p class="help-block" ng-show="form.name.$error.required && vm.submitted">-->
-          <!--  A name is required-->
-          <!--</p>-->
+          <p class="help-block" style="color:red" ng-show="form.name.$error.required && vm.submitted">
+            A project title is required!
+          </p>
           <label>Project Language</label>
           <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab1.language" />
           <label>Date Created</label>
           <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab1.dateCreated" />
+          
           <label>Repository Link</label>
           <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab1.repoUrl" />
-          <h3>Media</h3>
+          
+          <label>Project Description</label>
+          <textarea name="description" class="form-control" rows="4" ng-model="vm.currentProject.tab1.description"/>
+          
+          <h3>Media 1</h3>
           <label>Image Link</label>
           <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab2.image1" />
+          <label>Image Title</label>
+          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab2.image1Title" />
+          <label>Image Description</label>
+          <textarea name="description" class="form-control" rows="4" ng-model="vm.currentProject.tab2.image1Description"/>
+          
+          <h3>Media 2</h3>
           <label>Image Link</label>
           <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab2.image2" />
-          <!--<label>Project Description</label>-->
-          <!--<textarea name="desc" class="form-control" rows="4" ng-model="vm.user.desc"  />-->
+          <label>Image Title</label>
+          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab2.image2Title" />
+          <label>Image Description</label>
+          <textarea name="description" class="form-control" rows="4" ng-model="vm.currentProject.tab2.image2Description"/>
+          
+          <h3>Media 3</h3>
+          <label>Image Link</label>
+          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab2.image3" />
+          <label>Image Title</label>
+          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab2.image3Title" />
+          <label>Image Description</label>
+          <textarea name="description" class="form-control" rows="4" ng-model="vm.currentProject.tab2.image3Description"/>
+          
+          <h3>Media 4</h3>
+          <label>Image Link</label>
+          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab3.image1" />
+          <label>Image Title</label>
+          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab3.image1Title" />
+          <label>Image Description</label>
+          <textarea name="description" class="form-control" rows="4" ng-model="vm.currentProject.tab3.image1Description"/>
+          
+          <h3>Media 5</h3>
+          <label>Image Link</label>
+          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab3.image2" />
+          <label>Image Title</label>
+          <input type="text" name="github" class="form-control" ng-model="vm.currentProject.tab3.image2Title" />
+          <label>Image Description</label>
+          <textarea name="description" class="form-control" rows="4" ng-model="vm.currentProject.tab3.image2Description"/>
+          
+          <br>
+          <button class="btn btn-default btn-primary" type="submit">Save changes</button>
+          <br><br>
+          <label> * Required fields! All others are optional, but the more you add the better it looks :)</label>
       </form>
     </div>
     <div class="col-sm-6" ng-show="vm.isEdit">
