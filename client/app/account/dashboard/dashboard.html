@@ -1,26 +1,36 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <div class="col-md-6">
-        <h1>Projects</h1>
-      </div>
-      <div class="newButton col-md-12">
-        <a style="float:right" class="btn btn-default btn-success" ng-href="/dashboard/edit">
-            <span class="glyphicon glyphicon-plus"></span>New Project</a>
+      <div class="about col-md-12">
+        <h1>{{ vm.user.name }} <a style="float:right"class="btn btn-default btn-success" ng-href="/settings">
+            <span class="glyphicon glyphicon-plus"></span>Edit Account</a></h1>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Your Info</h3>
+          </div>
+          <div class="panel-body">
+            <p>Email: {{ vm.user.email }}</p>
+            <p>Account Type: {{ vm.user.role }}</p>
+          </div>
+        </div>
       </div>
       
-      <div class="col-sm-12 col-md-12 dashboard-section list-group">
-        <a ng-repeat="project in vm.user.projects" ng-model="vm.user.projects" class="list-group-item " ng-href="/dashboard/edit/{{ $index }}">{{ project.tab1.title }}</a>
+      <div class="col-sm-12 col-md-12">
+        <h1>Projects <a style="float:right"class="btn btn-default btn-success" ng-href="/dashboard/edit">
+            <span class="glyphicon glyphicon-plus"></span>New Project</a></h1>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Your Projects</h3>
+          </div>
+          <div class="panel-body">
+            <h4 ng-show="vm.user.projects.length == 0" class="list-group-item" >Your projects will appear here!</h4>
+            <div class="col-sm-12 col-md-12 dashboard-section list-group">
+              <a ng-repeat="project in vm.user.projects" ng-model="vm.user.projects" class="list-group-item " ng-href="/dashboard/edit/{{ $index }}">{{ project.tab1.title }}</a>
+            </div>
+          </div>
+        </div>  
       </div>
       
     </div>
-    
-    
-    
-    <!--<div class="col-sm-12 dashboard-section">-->
-    <!--  <div ng-repeat="project in vm.user.projects" ng-model="vm.user.projects">-->
-    <!--    <li><a ng-href="/dashboard/edit/{{ $index }}">{{ project.tab1.title }}</a></li>-->
-    <!--  </div>-->
-    <!--</div>-->
   </div>
 </div>

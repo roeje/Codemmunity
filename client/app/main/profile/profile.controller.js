@@ -8,8 +8,11 @@ class ProfileController {
     console.log("okay");
     this.$http.get('/api/users/' + $routeParams.id).then(response => {
       this.user = response.data;
-      console.log(this.user);
     });
+  }
+
+  getUserUrl() {
+    
   }
 }
 
